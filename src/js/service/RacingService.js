@@ -10,8 +10,8 @@ class RacingService {
   }
 
   getWinnerList(cars, carPlayers) {
-    const carsChildLists = [...cars].map((car) => car.childNodes.length);
-    const carPlayerTextLists = [...carPlayers].map((carPlayer) => carPlayer.innerText);
+    const carsChildLists = Array.from(cars).map((car) => car.childNodes.length);
+    const carPlayerTextLists = Array.from(carPlayers).map((carPlayer) => carPlayer.innerText);
     const maxLength = Math.max(...carsChildLists);
 
     this.winnerList = carPlayerTextLists.filter((item, index) => {
@@ -41,7 +41,7 @@ class RacingService {
     const cars = document.querySelectorAll('.car');
     const carPlayers = document.querySelectorAll('.car-player');
 
-    let count = 1;
+    let count = 0;
 
     const intervalTimeId = setInterval(() => {
       carPlayers.forEach((carPlayer) => {
@@ -51,9 +51,12 @@ class RacingService {
       });
 
       // eslint-disable-next-line no-plusplus
-      if (count++ === coin) {
+      count++;
+
+      if (count === coin) {
         clearInterval(intervalTimeId);
         RemoveTemplate.removeAllSpinners(cars);
+
         this.getWinnerList(cars, carPlayers);
         this.showGameResult(this.winnerList.join(', '));
         this.displayCongratsAlert();
