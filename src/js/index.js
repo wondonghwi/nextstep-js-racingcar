@@ -82,6 +82,7 @@ const reset = (e) => {
   addHiddenClass($racingSection);
   addHiddenClass($racingResult);
 
+  RemoveTemplate.removeCarPlayers($racingCarPlayer);
   RemoveTemplate.removeResult($racingResult);
 };
 

@@ -7,6 +7,12 @@ class RemoveTemplate {
     });
   };
 
+  static removeCarPlayers = (carPlayers) => {
+    while (carPlayers.hasChildNodes()) {
+      carPlayers.removeChild(carPlayers.firstChild);
+    }
+  };
+
   static removeResult = (result) => {
     while (result.hasChildNodes()) {
       result.removeChild(result.firstChild);
