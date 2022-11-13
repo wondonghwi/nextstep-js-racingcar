@@ -19,13 +19,13 @@ describe('레이싱카 테스트', () => {
       it(`${LENGTH.CAR_NAME_MIN_LENGTH}일 경우(아무것도 입력하지 않은경우) 오류를 발생시켜 error alert를 띄워준다.`, () => {
         cy.setEmptyStirngToInput('', '#car-name-form');
 
-        cy.onOccurAlert(ALERT_MESSAGE.NOT_VALIDATE_NAME);
+        cy.onOccurAlert(ALERT_MESSAGE.INVALID_CAR_NAME_LENGTH);
       });
 
       it(`${LENGTH.CAR_NAME_MAX_LENGTH}초과 일 경우 오류를 발생시켜 error alert를 띄워준다.`, () => {
         cy.submitCarNameForm('abcdef');
 
-        cy.onOccurAlert(ALERT_MESSAGE.NOT_VALIDATE_NAME);
+        cy.onOccurAlert(ALERT_MESSAGE.INVALID_CAR_NAME_LENGTH);
       });
     });
   });
@@ -74,7 +74,7 @@ describe('레이싱카 테스트', () => {
       it(`${LENGTH.CAR_TRY_VALUE_MIN_LENGTH}일 경우(아무것도 입력하지 않은경우) 오류를 발생시켜 error alert를 띄워준다.`, () => {
         cy.submitCarNameForm(CAR_NAMES_SRING);
         cy.setEmptyStirngToInput('', '#car-try-number-form');
-        cy.onOccurAlert(ALERT_MESSAGE.NO_VALUE_ENTERED);
+        cy.onOccurAlert(ALERT_MESSAGE.INVALID_RACING_COUNT);
       });
     });
   });
