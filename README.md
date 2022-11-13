@@ -3,7 +3,7 @@
 - [레이싱카 3단계 1차 미션 PR 코드리뷰](https://github.com/next-step/js-racingcar/pull/106)
 - [레이싱카 3단계 2차 & 3차 미션 PR 코드리뷰](https://github.com/next-step/js-racingcar/pull/111)
 
-> vanila javascript로 작업, Cypress로 E2E Test 진행
+> vanilla javascript로 작업, Cypress로 E2E Test 진행
 
 <br/>
 <p align="middle" >
