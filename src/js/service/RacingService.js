@@ -14,10 +14,7 @@ class RacingService {
     const carPlayerTextLists = Array.from(carPlayers).map((carPlayer) => carPlayer.innerText);
     const maxLength = Math.max(...carsChildLists);
 
-    this.winnerList = carPlayerTextLists.filter((item, index) => {
-      if (carsChildLists[index] !== maxLength) return;
-      return item;
-    });
+    this.winnerList = carPlayerTextLists.filter((item, index) => carsChildLists[index] === maxLength);
   }
 
   showGameResult(winnerList) {
